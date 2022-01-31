@@ -1,0 +1,33 @@
+body{
+    background-color: cadetblue;
+}
+header{
+    background-color: darkslategrey; height: 132px; margin: 1px; padding: 19px;
+}
+.cont1{
+    float: left;
+}
+.icons1{
+    text-align: center;
+}
+.cont2, .cont3{
+    float: right; height: 100%;
+}
+main{
+    background-color: darkslategrey; margin: 1px;
+}
+.cell1{
+    text-align: center;
+}
+.cell2{
+    text-align: center; color: darkorange
+}
+.cell3{
+    padding: 20px; text-align: justify; color: lightseagreen; width: 50%; vertical-align:top;
+}
+.cell4{
+    padding: 20px; text-align: justify; color: lightseagreen; width: 50%; vertical-align:top;
+}
+footer{
+    background-color: darkslategrey; height: 130px; margin: 1px
+}
