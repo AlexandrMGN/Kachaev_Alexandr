@@ -1,74 +1,77 @@
-.q1{
+.q1 {
     margin: 0px;
     float: left;
     width: calc(100%/2)
 }
-.q2{
+.q2 {
     margin: 0px;
     float: left;
     width: calc(100%/2);
 }
-.q3{
+.q3 {
     margin: 0px;
     float: left;
     align: botoom;
 }
-.q4{
+.q4 {
     float: right;
 }
-.q5{
+.q5 {
     float: right;
 }
-.q1-1{
+.q1-1 {
     margin: 0px;
     float: right;
     width: calc(100%/2)
 }
-.q2-1{
+.q2-1 {
     margin: 0px;
     float: right;
     width: calc(100%/2);
 }
-.q3-1{
+.q3-1 {
     margin: 0px;
     float: right;
     align: botoom;
 }
-.q4-1{
+.q4-1 {
     float: left;
 }
-.q5-1{
+.q5-1 {
     float: left;
 }
-.q6-1{
+.q6-1 {
     float: right;
 }
-.с1{
+.с1 {
     background-color: lightcoral;
     }
-.с2{
+.с2 {
     background-color: yellow;
 }
-.с3{
+.с3 {
     background-color: lightskyblue;
 }
-td{
-     width: 125px;
-     height: 75px;
+td {
+    width: 125px;
+    height: 75px;
 }
-.с0{
+.с0 {
     background-color: white;
 }
-.c1, .c2, .c3{
+.c1, .c2, .c3 {
     cursor: pointer;
 }
-a:hover{
-    color: white;
+a:hover {
+    color: blue;
 }
-a:visited{
-    color: gray;
-}
-a{
+a {
     color: inherit;
+}
+td {
+    transition: transform 0.2s;
+}
+td:hover {
+    transform: scale(1.5);
 }
 
