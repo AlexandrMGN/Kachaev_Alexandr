@@ -1,71 +1,126 @@
+/*------------ОБЩИИ НАСТРОЙКИ--------------*/
 .body{
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin: 5px;
 }
+.picture {
+    border-radius: 10px;
+    box-shadow: 0 0 20px #999;
+    objectfit: contain;
+    width : 100%;
+    height: 100%;
+}
+/*----------------------------ШАПКА-----------------------------*/
 header {
     background-image: url("../images/header.png");
     border-radius: 10px;
     box-shadow: 0 0 20px #999;
 }
-.headergrid {
+.header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
 }
-.i1 {
-    border-radius: 10px;
-    box-shadow: 0 0 20px #999;
+.menu {
+    margin: 12px;
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    text-align: right;
 }
-.flex {
-    display: flex;
-    flex-direction: column-reverse;
-}
-.flex1 {
-    display: flex;
-    flex-direction: row-reverse;
-}
-.cont1, .cont2 {
+.cont {
     transition: transform 0.2s;
 }
-.cont1:hover, .cont2:hover {
+.cont:hover {
     transform: scale(1.5);
 }
+@media screen and (max-width: 420px) {
+    .header {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+@media screen and (min-width: 420px) and (max-width: 1025px){
+    .header {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+/*------------------------РЕЗЮМЕ----------------------------*/
 main {
     opacity: 0.9 ;
-    margin: 1px;
+    margin: 5px;
 }
-.cell1 {
+.resume {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+.text1 {
+    display: grid;
+    grid-template-rows: auto 1fr;
     text-align: center;
 }
-.cell2 {
-    text-align: center; color: midnightblue;
+.text2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
 }
-.cell3 {
-    padding: 20px; text-align: justify; color: indigo; width: 50%; vertical-align:top;
+@media screen and (max-width: 420px) {
+    .resume {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+    }
+    .text2 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
 }
-.cell4 {
-    padding: 20px; text-align: justify; color: indigo; width: 50%; vertical-align:top;
+@media screen and (min-width: 420px) and (max-width: 1025px){
+    .resume {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr;
+    }
+    .text2 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
 }
-/*СОСТОЯНИЯ ВЕЩЕСТВА*/
-section {
-    display: flex;
-    justify-content: space-between;
-    min-height: 400px;
-    align-items: stretch;
-    justify-items: stretch
+      /*--------------СОСТОЯНИЯ ВЕЩЕСТВА----------------*/
+.states {
+    margin: 5px;
+    background-size: contain;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr;
 }
-.flex2 {
-    margin: 20px;
-    width: 426px;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
+.box1, .box2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
 }
-.a1 {
-    border-radius: 10px;
-    box-shadow: 0 0 20px #999;
+.crystal, .liquid, .gas, .plasma {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    text-align: center;
 }
-/*АТОМНОЕ СТРОЕНИЕ ВЕЩЕСТВА*/
+@media screen and (max-width: 420px) {
+    .states, .box1, .box2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 420px) and (max-width: 1025px) {
+    .states {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .box1, .box2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+/*-------------------------АТОМНОЕ СТРОЕНИЕ ВЕЩЕСТВА--------------------*/
 .ci {
     grid-area: ci;
 }
@@ -91,16 +146,10 @@ section {
     grid-area: p;
 }
 .grid2 {
-    /*padding: 20px;*/
-    /*margin: 20px;*/
-    /*align-items: center;*/
-    text-align: center;
-    min-width: 426px;
-    width: inherit;
-    min-height: 50%;
     display: grid;
-    grid-gap: 40px;
-    grid-template-columns: 50% 50%;
+    text-align: center;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas:
     'ci li'
@@ -111,6 +160,33 @@ section {
 .a2, .c, .l, .g, .p {
     font-weight:bold;
 }
+@media screen and (max-width: 420px) {
+    .grid2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        'ci'
+        'c'
+        'li'
+        'l'
+        'gi'
+        'g'
+        'pi'
+        'p';
+    }
+}
+@media screen and (min-width: 420px) and (max-width: 1025px) {
+    .grid2 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        'ci li'
+        'c l'
+        'gi pi'
+        'g p';
+    }
+}
+/*------------------ПОДВАЛ-----------------*/
 /*
 .footer {
     background-color: darkslategrey; height: auto; margin: 1px;
