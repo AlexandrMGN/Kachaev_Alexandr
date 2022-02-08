@@ -1,0 +1,199 @@
+/*------------ОБЩИИ НАСТРОЙКИ--------------*/
+.body{
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 5px;
+}
+.picture {
+    border-radius: 10px;
+    box-shadow: 0 0 50px #999;
+    objectfit: contain;
+    width : 100%;
+    height: 100%;
+}
+.titlle {
+    text-align: center;
+    color: black;
+}
+/*----------------------------ШАПКА-----------------------------*/
+header {
+    background-image: url("../images/header.png");
+    border-radius: 10px;
+    box-shadow: 0 0 20px #999;
+}
+.header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+.menu {
+    margin: 12px;
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    text-align: right;
+}
+.cont {
+    transition: transform 0.2s;
+}
+.cont:hover {
+    transform: scale(1.5);
+}
+@media screen and (max-width: 420px) {
+    .header {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+@media screen and (min-width: 420px) and (max-width: 1025px){
+    .header {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+/*------------------------РЕЗЮМЕ----------------------------*/
+main {
+    opacity: 0.9 ;
+    margin: 5px;
+}
+.resume {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin: 5px;
+}
+.text1 {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    text-align: center;
+}
+.text2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+@media screen and (max-width: 420px) {
+    .resume {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+    }
+    .text2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 420px) and (max-width: 1025px){
+    .resume {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr;
+    }
+    .text2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+      /*--------------СОСТОЯНИЯ ВЕЩЕСТВА----------------*/
+.states {
+    margin: 5px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+}
+.box1, .box2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+}
+.crystal, .liquid, .gas, .plasma {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    text-align: center;
+}
+@media screen and (max-width: 420px) {
+    .states, .box1, .box2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 420px) and (max-width: 1025px) {
+    .states {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .box1, .box2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+/*-------------------------АТОМНОЕ СТРОЕНИЕ ВЕЩЕСТВА--------------------*/
+.ci {
+    grid-area: ci;
+}
+.c {
+    grid-area: c;
+}
+.li {
+    grid-area: li;
+}
+.l {
+    grid-area: l;
+}
+.gi {
+    grid-area: gi;
+}
+.g {
+    grid-area: g;
+}
+.cpi {
+    grid-area: pi;
+}
+.p {
+    grid-area: p;
+}
+.grid2 {
+    display: grid;
+    margin: 10px;
+    text-align: center;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    'ci li'
+    'c l'
+    'gi pi'
+    'g p';
+}
+.a2, .c, .l, .g, .p {
+    font-weight:bold;
+}
+@media screen and (max-width: 420px) {
+    .grid2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        'ci'
+        'c'
+        'li'
+        'l'
+        'gi'
+        'g'
+        'pi'
+        'p';
+    }
+}
+@media screen and (min-width: 420px) and (max-width: 1025px) {
+    .grid2 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        'ci li'
+        'c l'
+        'gi pi'
+        'g p';
+    }
+}
+/*------------------ПОДВАЛ-----------------*/
+/*
+.footer {
+    background-color: darkslategrey; height: auto; margin: 1px;
+    opacity: 0.5 ;
+}*/
