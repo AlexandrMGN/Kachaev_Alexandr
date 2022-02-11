@@ -1,0 +1,12 @@
+body{
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 5px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    grid-gap: 5px;
+}

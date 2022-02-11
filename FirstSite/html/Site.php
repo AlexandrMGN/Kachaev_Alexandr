@@ -10,9 +10,7 @@
      date_default_timezone_set('Asia/Yekaterinburg');
      $time = date(G);
      echo date('G-i-s');
-    ?>
-    <?
-    if ($time >= 8 and $time < 20) {
+     if ($time >= 8 and $time < 20) {
     ?>
         <link rel="stylesheet" href="../styles/StyleSiteDay.css">
     <? }else {?>
@@ -21,21 +19,9 @@
     </head>
 <body class="body">
     <!--ШАПКА-->
-    <header>
-        <div class="header">
-            <img class="picture" src="../images/icons1-96.png" alt="Ops...">
-            <div class="menu">
-                <div>
-                    <a href="../html/TableMendeleev.html" title="Таблица Менделеева" target="_blank">
-                        <img src="../images/icons3-64.png" alt="Ops..." class="cont">
-                    </a>
-                    <a href="..." title="Настройки" target="_blank">
-                        <img src="../images/icons4-64.png" alt="Ops..." class="cont">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?
+    require_once 'headr.php'
+    ?>
     <main>
         <!--РУЗЮМЕ-->
         <div class="resume">
@@ -116,7 +102,9 @@
             </div>
         </div>
     </main>
-    <footer class="footer">
-    </footer>
+    <!---------------ПОДВАЛ------------------>
+    <?
+    require_once 'footer.php'
+    ?>
 </body>
 </html>

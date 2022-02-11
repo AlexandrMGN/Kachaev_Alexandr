@@ -1,0 +1,7 @@
+.footer {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 10px;
+    position: fixed;
+    left: 0; bottom: 0;
+}
