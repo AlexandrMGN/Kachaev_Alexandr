@@ -1,7 +1,16 @@
 .footer {
+    background-image: url("../images/footer.jpg");
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
     margin: 10px;
-    position: fixed;
-    left: 0; bottom: 0;
+    /*position: fixed;*/
+    /*left: 0; bottom: 0;*/
+}
+.date {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    text-align: center;
 }

@@ -1,3 +1,20 @@
+<?php
+$me = 'Всем привет! Коротко о себе. Мне 40 лет. Образование высшее металлургическое. До этого обучения программированием не занимался. Мои хобби: спорт, компьютерные игры, кулинария.';
+$hi =mb_substr($me, 0, 12);
+?>
+<?php
+$opinion = 'Моё мнение о курсах: интересно, информативно.';
+$arr = explode(' ',$opinion);
+foreach ($arr as $key => &$value)
+{
+    if ($key % 2 == 0)
+    {
+        $value = "<span style='color: brown'>$value</span>";
+    }
+    else $value = "<span style='color: rebeccapurple'>$value</span>";
+}
+$opinion = implode(' ', $arr);
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -30,9 +47,11 @@
                     <h1 class="titlle">Качаев Александр Анатольевич
                     </h1>
                 <div class="text2">
-                    <p class="titlle">Всем привет! Коротко о себе. Мне 40 лет. Образование высшее металлургическое. До этого обучения программированием не занимался. Мои хобби: спорт, компьютерные игры, кулинария.
+                    <p class="titlle">
+                        <?echo "<span style='color: aqua'>$hi</span>", mb_substr($me, 12) ;?>
                     </p>
-                    <p class="titlle">Моё мнение о курсах: интересно, информативно.
+                    <p class="titlle">
+                        <?echo $opinion;?>
                     </p>
                 </div>
             </div>

@@ -1,3 +1,7 @@
+<?php
+date_default_timezone_set('Asia/Yekaterinburg');
+$t = (strtotime (date('m.d.y')) - strtotime ("23.01.1982")) / (60*60*24);
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,9 +14,23 @@
 </head>
 <!--<body>-->
 <footer class="footer">
-    <div>
-        <img class="picture" src="../images/footer.jpg" alt="Ops...">
+    <div class="date">
+         <span>Я родился
+        <?
+        echo "23.01.1982";
+        ?>
+        </span>
+        <span>Сегодня
+        <?
+        echo date('m.d.y');
+        ?>
+        </span>
     </div>
+    <span>Мне
+         <?
+         echo floor($t);
+         ?> дней
+        </span>
 </footer>
 <!--</body>-->
 </html>
