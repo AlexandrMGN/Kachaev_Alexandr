@@ -1,6 +1,31 @@
 <?php
-date_default_timezone_set('Asia/Yekaterinburg');
-$t = (strtotime (date('m.d.y')) - strtotime ("23.01.1982")) / (60*60*24);
+function c()
+{
+    date_default_timezone_set('Asia/Yekaterinburg');
+    $t = (strtotime(date('m.d.y')) - strtotime("23.01.1982")) / (60 * 60 * 24);
+    echo floor($t);
+}
+?>
+<?php
+function d($site)
+{
+    $site = preg_replace('/[^\w\s]/u', '', $site);
+    $site = mb_strtolower($site);
+
+    $vl = ['й', 'у', 'е', 'ё', 'ы', 'а', 'о', 'э', 'я', 'и', 'ю', 'e', 'y', 'u', 'i', 'o', 'a'];
+    $cl = mb_strlen($site);
+    $ccl = mb_strlen(str_replace($vl, '', $site));
+    $cvl = $cl - $ccl;
+    echo "<span>Колличество гласных букв</span>" . $cvl;
+}
+function e($site){
+    $site = preg_replace('/[^\w\s]/u', '', $site);
+    $site = mb_strtolower($site);
+    $cw = str_word_count($site, 0, 'йцукенгшщзхфывапролджэячсмитьбю');
+    echo "<span>Колличество слов</span>" . $cw;
+}
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,7 +37,6 @@ $t = (strtotime (date('m.d.y')) - strtotime ("23.01.1982")) / (60*60*24);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<!--<body>-->
 <footer class="footer">
     <div class="date">
          <span>Я родился
@@ -22,15 +46,18 @@ $t = (strtotime (date('m.d.y')) - strtotime ("23.01.1982")) / (60*60*24);
         </span>
         <span>Сегодня
         <?
-        echo date('m.d.y');
+        echo date('d.m.y');
         ?>
         </span>
     </div>
-    <span>Мне
+    <span>Дней с даты моего рождения
          <?
-         echo floor($t);
+         c();
          ?> дней
         </span>
+    <?
+    d($site);
+    e($site);
+    ?>
 </footer>
-<!--</body>-->
 </html>

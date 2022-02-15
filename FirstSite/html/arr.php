@@ -1,3 +1,6 @@
+<?php
+$site = strip_tags(file_get_contents(__FILE__));
+?>
 <!doctype html>
 <html lang="en">
 <head>

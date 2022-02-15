@@ -1,20 +1,40 @@
-<?php
-$me = 'Всем привет! Коротко о себе. Мне 40 лет. Образование высшее металлургическое. До этого обучения программированием не занимался. Мои хобби: спорт, компьютерные игры, кулинария.';
-$hi =mb_substr($me, 0, 12);
+<?$time = date(G);
+ function t($time){
+        date_default_timezone_set('Asia/Yekaterinburg');
+
+    echo date('G-i-s');
+    if ($time >= 8 and $time < 20) {
+?>
+        <link rel="stylesheet" href="../styles/StyleSiteDay.css">
+<? }else {
+?>
+        <link rel="stylesheet" href="../styles/StyleSiteNight.css">
+<?}}
+?>
+<?
+    $site = strip_tags(file_get_contents(__FILE__));
 ?>
 <?php
-$opinion = 'Моё мнение о курсах: интересно, информативно.';
-$arr = explode(' ',$opinion);
-foreach ($arr as $key => &$value)
-{
-    if ($key % 2 == 0)
-    {
-        $value = "<span style='color: brown'>$value</span>";
-    }
-    else $value = "<span style='color: rebeccapurple'>$value</span>";
+    $me = 'Всем привет! Коротко о себе. Мне 40 лет. Образование высшее металлургическое. До этого обучения программированием не занимался. Мои хобби: спорт, компьютерные игры, кулинария.';
+    $opinion = 'Моё мнение о курсах: интересно, информативно.';
+function a($me){
+    $hi =mb_substr($me, 0, 12);
+    echo "<span style='color: aqua'>$hi</span>", mb_substr($me, 12) ;
 }
-$opinion = implode(' ', $arr);
+function b($opinion){$arr = explode(' ',$opinion);
+    foreach ($arr as $key => &$value)
+    {
+        if ($key % 2 == 0)
+        {
+            $value = "<span style='color: brown'>$value</span>";
+        }
+        else $value = "<span style='color: rebeccapurple'>$value</span>";
+    }
+    $opinion = implode(' ', $arr);
+    echo $opinion;
+}
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,16 +43,9 @@ $opinion = implode(' ', $arr);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <?
-     date_default_timezone_set('Asia/Yekaterinburg');
-     $time = date(G);
-     echo date('G-i-s');
-     if ($time >= 8 and $time < 20) {
-    ?>
-        <link rel="stylesheet" href="../styles/StyleSiteDay.css">
-    <? }else {?>
-        <link rel="stylesheet" href="../styles/StyleSiteNight.css">
-    <?}?>
+        <?
+        t($time);
+        ?>
     </head>
 <body class="body">
     <!--ШАПКА-->
@@ -44,14 +57,18 @@ $opinion = implode(' ', $arr);
         <div class="resume">
             <img class="picture" src="../images/i.jpg" alt="Ops...">
             <div class="text1">
-                    <h1 class="titlle">Качаев Александр Анатольевич
-                    </h1>
+                <h1 class="titlle">Качаев Александр Анатольевич
+                </h1>
                 <div class="text2">
                     <p class="titlle">
-                        <?echo "<span style='color: aqua'>$hi</span>", mb_substr($me, 12) ;?>
+                        <?
+                        a($me);
+                        ?>
                     </p>
                     <p class="titlle">
-                        <?echo $opinion;?>
+                        <?
+                        b($opinion);
+                        ?>
                     </p>
                 </div>
             </div>
@@ -121,8 +138,8 @@ $opinion = implode(' ', $arr);
             </div>
         </div>
     </main>
-    <!---------------ПОДВАЛ------------------>
-    <?
+        <!---------------ПОДВАЛ------------------>
+    <?php
     require_once 'footer.php'
     ?>
 </body>
