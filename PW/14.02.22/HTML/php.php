@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+<h2> Страница 13</h2>
 <h3> Задача 4</h3>
 <?
 function a($arr){
@@ -60,6 +61,62 @@ return d($fib-1) + d($fib-2);
 }
 }
 echo d($i);
+?>
+<h2> Страница 14</h2>
+<h3> Задача 1</h3>
+<?
+$arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9,];
+function e($arr2)
+{
+for($i = 0; $i < 9; $i ++)
+{
+    $arr2[$i] = mt_rand(1, 9);
+}
+print_r($arr2);
+}
+echo e($arr2);
+?>
+<h3> Задача 2</h3>
+<?
+$str1 = 'HTML, CSS, PHP, BITRIX';
+function j($str1)
+{
+    $cw1 = str_word_count($str1, 0, 'QWERTYUIOPASDFGHJKLZXCVBNM');
+    echo $cw1;
+}
+j($str1);
+?>
+<h3> Задача 3</h3>
+<?
+function i($str1)
+{
+    $str3 = strrev($str1);
+    echo $str3;
+}
+i($str1);
+?>
+<h3> Задача 4</h3>
+<?
+function p($str1)
+{
+    $str3 = mb_strlen($str1);
+    echo $str3;
+}
+p($str1);
+?>
+<h3> Задача 5</h3>
+<?
+function t($str1)
+{
+    $str1 = str_replace(' ', '', $str1);
+    $str1 = preg_replace('/[^\w\s]/u', '', $str1);
+    $str1 = preg_split('//u', $str1, NULL, PREG_SPLIT_NO_EMPTY);
+    foreach ($str1 as $value)
+   {
+       echo $value . "<br>";
+   }
+}
+t($str1);
 ?>
 </body>
 </html>
